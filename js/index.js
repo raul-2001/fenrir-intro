@@ -1,4 +1,4 @@
-// lesson-4-2
+// lesson-4-2 .
 today = new Date();
 thisYear = today.getFullYear();
 const footer = document.querySelector('footer');
