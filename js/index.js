@@ -54,4 +54,4 @@ messageForm.addEventListener('submit', event =>{
     // Apend the newMessage to the messageList element
     messagesList.appendChild(newMessage);
 
-});
+})
