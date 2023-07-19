@@ -2,19 +2,26 @@
 today = new Date();
 thisYear = today.getFullYear();
 const footer = document.querySelector('footer');
+footer.className = "container";
 const copyright = document.createElement('p');
 copyright.classList.add('copyright');
-copyright.textContent = `Raul ${thisYear}`;
+copyright.textContent = `Raul Guliyev ${thisYear}`;
 footer.appendChild(copyright);
 
 
 // Skills
-skills = ['javaScript', 'HTML', 'CSS', 'GIT', 'Python', 'Django', 'SQL']
+skills = ['JavaScript', 'HTML', 'CSS', 'GIT', 'Python', 'Django', 'SQL', 'Linux', 'Docker']
 const skillsSection = document.querySelector('#skills');
 const skillsList = skillsSection.querySelector("ul");
+skillsList.style.display = "flex";
 for(var a=0; a < skills.length; a++){
     const skill = document.createElement('li');
     skill.innerText = skills[a];
+    skill.style.marginRight = "0.5rem";
+    skill.className = "tag";
+    /*
+    skill.style.display = "flex";
+    */
     skillsList.appendChild(skill);
 }
 
@@ -55,3 +62,21 @@ messageForm.addEventListener('submit', event =>{
     messagesList.appendChild(newMessage);
 
 });
+
+// Fetch GitHub Repositories
+
+const githubRequest = new XMLHttpRequest;
+githubRequest.open('GET', 'https://api.github.com/users/raul-2001/repos');
+githubRequest.send();
+githubRequest.addEventListener("load", (event) => {
+    const myData = JSON.parse(githubRequest.responseText);
+
+    const projectSection = document.getElementById("projects");
+    const projectList = projectSection.querySelector("ul");
+
+    for (let i = 0; i < myData.length; i++) {
+        const project = document.createElement("li");
+        project.innerText = myData[i].name;
+        projectList.appendChild(project);
+    }
+})
