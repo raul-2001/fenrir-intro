@@ -55,3 +55,49 @@ messageForm.addEventListener('submit', event =>{
     messagesList.appendChild(newMessage);
 
 })
+
+
+/*
+// XMLHttpRequest that is callback-based API
+const githubRequest = new XMLHttpRequest;
+githubRequest.open('GET', 'https://api.github.com/users/raul-2001/repos');
+githubRequest.send();
+githubRequest.addEventListener("load", (event) => {
+    const myData = JSON.parse(githubRequest.responseText);
+
+    const projectSection = document.getElementById("projects");
+    const projectList = projectSection.querySelector("ul");
+
+    for (let i = 0; i < myData.length; i++) {
+        const project = document.createElement("li");
+        project.innerText = myData[i].name;
+        projectList.appendChild(project);
+    }
+})
+
+*/
+
+// Fetch API
+const resquestUrl = 'https://api.github.com/users/raul-2001/repos'
+fetch(resquestUrl)
+.then(response => {
+    const myData = response.json();
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(myData);
+        }, 1000)
+        }
+        )
+    })
+
+.then(myData =>{
+    
+    const projectSection = document.getElementById("projects");
+    const projectList = projectSection.querySelector("ul");
+
+    for (let i = 0; i < myData.length; i++) {
+        const project = document.createElement("li");
+        project.innerText = myData[i].name;
+        projectList.appendChild(project);
+    }
+})
