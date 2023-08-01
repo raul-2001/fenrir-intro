@@ -1,24 +1,27 @@
-// lesson-4-2 .
+// Footer
 today = new Date();
 thisYear = today.getFullYear();
 const footer = document.querySelector('footer');
 const copyright = document.createElement('p');
 copyright.classList.add('copyright');
-copyright.textContent = `Raul ${thisYear}`;
+copyright.textContent = `© Raul Guliyev ${thisYear}`;
 footer.appendChild(copyright);
 
 
 // Skills
-skills = ['javaScript', 'HTML', 'CSS', 'GIT', 'Python', 'Django', 'SQL']
+skills = ['javaScript', 'HTML', 'CSS', 'Python', 'SQL', 'GIT', 'Django', 'DRF', 'FastAPI', 'Docker']
 const skillsSection = document.querySelector('#skills');
 const skillsList = skillsSection.querySelector("ul");
+//skillsList.style.display = "grid";
 for(var a=0; a < skills.length; a++){
     const skill = document.createElement('li');
     skill.innerText = skills[a];
+    skill.style.marginRight = "0.5rem";
+    skill.className = "tag";
     skillsList.appendChild(skill);
 }
 
-// lesson-4-3
+// Leave Message
 const messageForm = document.querySelector("form[name='leave_message']");
 
 /*const messageForm = document.getElementsByTagName('form');*/
@@ -83,9 +86,12 @@ fetch(resquestUrl)
 .then(response => {
     const myData = response.json();
     return new Promise((resolve, reject) => {
+        /*
         setTimeout(() => {
             resolve(myData);
-        }, 1000)
+        }, 10)
+        */
+       resolve(myData);
         }
         )
     })
@@ -94,10 +100,22 @@ fetch(resquestUrl)
     
     const projectSection = document.getElementById("projects");
     const projectList = projectSection.querySelector("ul");
+    //projectList.style.display = "flex";
 
     for (let i = 0; i < myData.length; i++) {
+
         const project = document.createElement("li");
-        project.innerText = myData[i].name;
+        const a = document.createElement("a");
+
+        // adding css styles
+        project.style.marginRight = "0.5rem"
+        project.className = "tag";
+        
+        a.innerText = myData[i].name;
+        a.href = myData[i].clone_url;
+        a.target = "_blank";
+        a.rel = "noopener nooreferrer";
+        project.appendChild(a);
         projectList.appendChild(project);
     }
 })

@@ -12,26 +12,10 @@ body {
     display: flex;
     flex-direction: column;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    /*
-    padding: 1rem 0;
-    margin: 0 auto;
-    max-width: 1024px;
-    width: 90vw;
-    */
+
     font-size: 16px;
 }
 
-/*
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 90vw;
-    background-color: aliceblue;
-    padding: 10px;
-    height: 100px;
-}
-*/
 
 .container {
     padding: 1rem 0;
@@ -42,9 +26,6 @@ header {
 
 nav {
     align-items: center;
-    /*
-    display: flex;
-    */
     justify-content: space-between;
 }
 
@@ -92,9 +73,6 @@ img {
 
 main {
     flex-grow: 1;
-    /*
-    margin-top: 100px;
-    */
 }
 
 .skills {
@@ -130,12 +108,8 @@ section {
     padding: 5px;
 }
 
-
-
-
 .field__label {
     margin-bottom: 0.25rem;
-    box-sizing: border-box;
     padding: 5px;
     
 }
@@ -148,8 +122,6 @@ section {
     width: 395px;
 }
 
-
-
 h1, h2 {
     font-size: 27px;
     font: bold;
@@ -161,9 +133,7 @@ ul {
     padding: 0;
     margin: 0;
     list-style: none;
-    /*
-    justify-content: space-around;
-    */
+
 }
 
 .tag {
@@ -178,7 +148,6 @@ label{
     color: black; 
     font: bold 1rem;
 }
-
 
 
 input[type="text"] {
@@ -201,17 +170,11 @@ textarea {
     margin: 5px 0;
 }
 
-
-
-
 input::placeholder,
 textarea::placeholder {
     padding: 5px;
     color: hsl(213, 73%, 50%);
 }
-
-
-
 
 button {
     font: 1.25em;
@@ -223,17 +186,18 @@ button {
     border-color: hsl(213, 73%, 50%);
 }
 
-/* */
+
 footer {
-    background-color: rgb(226, 186, 162);
+    background-color: rgb(241, 232, 232);
+    text-align: center;
 }
 
 
 @media screen and (min-width: 667px) {
     .menu--hide-mobile {
         display: flex;
-     
-}
+    }
+
     nav {
         display: flex;
     }
@@ -245,4 +209,5 @@ footer {
     .container_username_email {
         display: flex;
     }
+
 }
