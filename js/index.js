@@ -13,7 +13,7 @@ skills = ['javaScript', 'HTML', 'CSS', 'Python', 'SQL', 'GIT', 'Django', 'DRF', 
 const skillsSection = document.querySelector('#skills');
 const skillsList = skillsSection.querySelector("ul");
 //skillsList.style.display = "grid";
-for(var a=0; a < skills.length; a++){
+for(let a=0; a < skills.length; a++){
     const skill = document.createElement('li');
     skill.innerText = skills[a];
     skill.style.marginRight = "0.5rem";
@@ -27,27 +27,48 @@ const messageForm = document.querySelector("form[name='leave_message']");
 /*const messageForm = document.getElementsByTagName('form');*/
 messageForm.addEventListener('submit', event =>{
     event.preventDefault();
+
+    // Current time
+    const now_date = new Date();
+
     const userName = event.target.userName.value;
     const usersEmail = event.target.usersEmail.value;
     const usersMessage = event.target.usersMessage.value;
 
-    console.log(userName, usersEmail, usersMessage);
+    //console.log(userName, usersEmail, usersMessage);
     messageForm.reset();
+    
 
     const messagesSection = document.querySelector('#messages');
     const messagesList = messagesSection.querySelector('ul');
     const newMessage = document.createElement('li');
-    newMessage.innerHTML = `<a href=${usersEmail}>${userName} wrote: <span>${usersMessage} </span></a>`;
-    
+    newMessage.classList.add('list__item');
+    newMessage.innerHTML =  `<div>
+    <span class="strong">${usersMessage}</span>
+    <p>${now_date.toLocaleDateString()} from <a class"link" href="mailto:${usersEmail}">${userName}</a> &nbsp;</p>
+    </div>`;
 
-    //create a new button element and set its properties
+    if (messagesSection.style.display === 'none') {
+        messagesSection.style.display = 'block';
+    }
+
+    // Create a new button element 'REMOVE' and set its properties
     const removeButton = document.createElement('button');
     removeButton.innerText = 'remove';
+    removeButton.style.color = 'white';
+    removeButton.style.backgroundColor = 'red';
     removeButton.type  = 'button';
 
     // Add an event listenr to the removeButton 
     removeButton.addEventListener('click', event => {
-        const entry = removeButton.parentNode;
+        const entry = event.target.parentNode;
+        const list = entry.parentNode;
+
+        // if there is not message, hide the section
+        if (list.children.length <= 1) {
+            messagesSection.style.display = 'none';
+        }
+
         entry.remove();
     });
 

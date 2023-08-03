@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta>
+        <meta charset="utf-8">
         <title>My Fenerir project</title>
         <link rel="stylesheet" href="css/style.css">
     </head>
@@ -13,14 +13,14 @@
                 <nav class="nav">
                     <ul class="menu" role="list">
                         <li class="menu__item"><img class="image image--small img--rounded" src="/media/jpg/rauls_photo" alt="Raul Guliyev" /></li>
-                        <li class="menu__item"><h1>Raul Guliyev</h1></li>
+                        <li class="menu__item"><h2>Raul Guliyev</h2></li>
                     </ul>
                     <ul class="menu menu--hide-mobile" role="list">
                         <li class="menu__item">
                             <a class="link link-no-color" href="#about">About</a>
                             </li>
                         <li class="menu__item">
-                            <a class="link link-no-color" href="#skils">Skils</a>                                
+                            <a class="link link-no-color" href="#skills">Skils</a>                                
                             </li>
                         <li class="menu__item">
                             <a class="link link-no-color" href="#experience">Experience</a>
@@ -43,13 +43,13 @@
             <!--About section-->
             <div class="container">
                 <section id="about">
-                    <h1>About</h1>
+                    <h2>About</h2>
                     <p>Hey! I'm Raul and I'm multi-disciplined software engineer with experience full-stack development and ERP development. Continuous process improver. Empathetic leader. Focused on crafting a web for everyone.</p>
                     <p>The web can sometimes be indistinguishable from magic, but I have the knowledge and patience required to make just about anything.</p>                            
                 </section>
                 <!--Experience section-->
                 <section id="experience">
-                    <h1>Experience</h1>
+                    <h2>Experience</h2>
                     <div class="grid-container">                        
                         <div class="card">
                             <span>
@@ -90,31 +90,23 @@
                             
                         </ul>
                 </section>
-                <!--Contact me section-->     
-                <section id="connect">
-                    <h1>Contact Me</h1>    
-                    <ul>
-                        <li class="tag"><a href="https://github.com/raul-2001/" target="_blank" rel="noopener nooreferrer" title="github">GitHub</a></li>
-                        <li class="tag"><a href="https://www.linkedin.com/in/raul-guliyev-3a3670110" target="_blank" rel="noopener nooreferrer" title="linkedin">LinkEdin</a></li>
-                        <li class="tag">rlqv2001@gmail.com</li>
-                    </ul>
-                </section>
+
                 <!--Leave message section-->
                 <section id="leave_message">
                     <h2>Leave a Message</h2>
                     <form name="leave_message" autocomplete="on">
                         <div class="container-leave_message">
                             <div class="container_username_email">
-                                <div class="item-user__name">
+                                <div class="field item-user__name">
                                     <label class="field__label" for="userName">User name</label>
                                     <input class="field__input" type="text" id="userName" name="userName" required="true" placeholder="First or Full Name" autocomplete="on">
                                 </div>
-                                <div class="item-email">
+                                <div class="field item-email">
                                     <label class="field__label" for="usersEmail"> User email</label>
                                     <input class="field__input" type="email" id="usersEmail" name="usersEmail" required="true" placeholder="name@example.com">
                                 </div>                                
                             </div>
-                            <div class="item-textarea">
+                            <div class="field item-textarea">
                                 <label class="field__label" for="usersMessage">Message</label>
                                 <textarea class="field__input" name="usersMessage" id="usersMessage"  required="true" rows="20" cols="70" placeholder="Leave a message"></textarea>
                             </div>
@@ -124,12 +116,21 @@
                 </section>
 
                 <!--Messages section-->
-                <section id="messages">
+                <section id="messages" style="display: none;">
                     <h2>Messages</h2>
-                    <ul>
+                    <ul class="list" role="list">
                         
                     </ul>
                 </section>
+                <!--Contact me section-->     
+                <section id="connect">
+                    <h2>Contact Me</h2>    
+                    <ul>
+                        <li class="tag"><a href="https://github.com/raul-2001/" target="_blank" rel="noopener nooreferrer" title="github">GitHub</a></li>
+                        <li class="tag"><a href="https://www.linkedin.com/in/raul-guliyev-3a3670110" target="_blank" rel="noopener nooreferrer" title="linkedin">LinkEdin</a></li>
+                        <li class="tag">rlqv2001@gmail.com</li>
+                    </ul>
+                </section>            
             </div>
         </main>
         <!--Footer element-->

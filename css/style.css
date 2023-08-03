@@ -34,6 +34,11 @@ ul[role="list"], ol[role="list"] {
     padding: 0;
 }
 
+.list__item {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
 
 .menu {
     display: flex;
@@ -187,6 +192,7 @@ button {
 }
 
 
+
 footer {
     background-color: rgb(241, 232, 232);
     text-align: center;
@@ -210,4 +216,12 @@ footer {
         display: flex;
     }
 
+    .item-user__name {
+        margin-right: 1rem;
+    }
+
+    .item-textarea {
+        width: 100%;
+        max-width: 410px;
+    }
 }
